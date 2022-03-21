@@ -138,7 +138,9 @@ const quitPoke = () => {
 };
 
 const searchName = () => {
-  let name = buscador.value;
+  let name = buscador.value.toLowerCase();
+
+  console.log(name);
 
   fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((response) => response.json())
