@@ -25,11 +25,13 @@ const getPokemon = (num1, num2) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        console.log(data.types[0].type.name);
 
-        lista.innerHTML += `<div class="poke ">
-          <h3 class = 'name'>${data.name}</h3>
+        let tipo = data.types[0].type.name;
+        lista.innerHTML += `<div class= "poke ${tipo}"  >
+          <h3 class = 'name  '>${data.name}</h3>
 
-          <img src=${data.sprites.front_default} alt="" />
+         <div class = "pokeImage">  <img  src=${data.sprites.other.dream_world.front_default} alt="" /></div>          
 
           <small class = 'none'>Experience : <span> + ${data.base_experience}</span></small>
 
@@ -37,7 +39,7 @@ const getPokemon = (num1, num2) => {
 
          
 
-          <button class="  btn-info" id=${data.id}>Ver Pokemon</button>
+           <img class ="poke-btn" id=${data.id} src="/img/Pokeball_icon-icons.com_67533.svg" alt="">
         </div>`;
       })
       .catch((err) => {
@@ -55,7 +57,6 @@ function sumar() {
   count1 += 20;
   count2 += 20;
 
-  console.log(count1);
   getPokemon(count1, count2);
 }
 
@@ -83,9 +84,9 @@ getPokemon(count1, count2);
 const marcarPoke = () => {
   document.addEventListener("click", (e) => {
     let point = e.target;
-    if (point.classList.contains("btn-info")) {
+    if (point.classList.contains("poke-btn")) {
       let pokeSelected = point.parentNode;
-
+      console.log(pokeSelected);
       crearPoke(pokeSelected);
     }
   });
@@ -104,14 +105,14 @@ const crearPoke = (poke) => {
   const { nombre, img, experience, move } = pokemon;
 
   detail.innerHTML = `
-<div class="poke big">
+<div class="poke big   ">
 <div class="comand">
 
 <div><button class="btn btn-close" onclick = quitPoke()></button></div>
 </div>
 <h3 class="name">${nombre}</h3>
-          <img src=${img} alt="" />
-
+         
+          <div class = "pokeImageBig ">  <img  src=${img} alt="" /></div>  
           <div class="info">
           <div>
             <small> <Span> ${experience}</span></small>
@@ -126,8 +127,6 @@ const crearPoke = (poke) => {
 
          
         </div>`;
-
-  body.classList.add("dark");
 };
 
 /* quita el modal del detalle de pokemon */
@@ -152,7 +151,7 @@ const searchName = () => {
     <div><button class="btn btn-close" onclick = quitPoke()></button></div>
     </div>
     <h3 class="name">${data.name}</h3>
-              <img src=${data.sprites.front_default} alt="img" />
+              <img  src=${data.sprites.other.dream_world.front_default} alt="img" />
     
               <div class="info">
               <div>
@@ -168,7 +167,6 @@ const searchName = () => {
     
              
             </div>`;
-      body.classList.add("dark");
     })
     .catch((err) => {
       console.log(err);
