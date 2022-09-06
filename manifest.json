@@ -1,0 +1,60 @@
+{
+  "name": "Pokedexexe",
+  "short_name": "Pkdexe",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#366eb0",
+  "theme_color": "#366eb0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicons/apple-touch-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/apple-touch-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "114x114",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/apple-touch-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/apple-touch-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+
+    {
+      "src": "/favicons/apple-touch-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/android-icon192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "apple-touch-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/cara-removebg-preview.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

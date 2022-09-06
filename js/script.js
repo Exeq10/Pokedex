@@ -1,3 +1,12 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/js/sw.js")
+    .then(console.log("se registro correctamente"))
+    .catch((err) => console.log("fallo la instalacion ", err));
+} else {
+  console.log("No soporta serviceWorker");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   marcarPoke();
 });
@@ -39,7 +48,7 @@ const getPokemon = (num1, num2) => {
 
          
 
-           <img class ="poke-btn" id=${data.id} src="/img/Pokeball_icon-icons.com_67533.svg" alt="">
+           <img id= "pokeBall" class ="poke-btn animate__animated animate__tada animate__infinite " id=${data.id} src="/img/Pokeball_icon-icons.com_67533.svg" alt="">
         </div>`;
       })
       .catch((err) => {
